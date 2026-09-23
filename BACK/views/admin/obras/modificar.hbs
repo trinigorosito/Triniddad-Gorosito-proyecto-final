@@ -1,0 +1,39 @@
+<div class="container" style="margin:100px auto">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4>Modificar obra</h4>
+            <form action="/admin/obras/modificar" method="post">
+                <input type="hidden" value="{{obra.idObra}}" name="idObra">
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Título</label>
+                    <input type="text" class="form-control" placeholder="Título" name="titulo" value="{{obra.titulo}}">
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Teatro</label>
+                    <input type="text" class="form-control" placeholder="Teatro" name="teatro" value="{{obra.teatro}}">
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Género</label>
+                    <input type="text" class="form-control" placeholder="Género" name="genero" value="{{obra.genero}}">
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Sinopsis</label>
+                    <textarea class="form-control" placeholder="Sinopsis" name="sinopsis" rows="4">{{obra.sinopsis}}</textarea>
+                </div>
+
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">Guardar cambios</button>
+                    <a href="/admin/obras" class="btn btn-secondary">Cancelar</a>
+                </div>
+            </form>
+
+            {{#if error}}
+                <p class="text-danger mt-3">{{message}}</p>
+            {{/if}}
+        </div>
+    </div>
+</div>

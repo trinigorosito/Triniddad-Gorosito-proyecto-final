@@ -1,0 +1,51 @@
+<div class="container my-5">
+    <div class="row align-items-center mb-4">
+        <div class="col-md-6">
+            <h3 class="fw-bold text-secondary mb-3 mb-md-0">Listado de Novedades</h3>
+        </div>
+        <div class="col-md-6 text-md-end d-flex flex-wrap justify-content-md-end align-items-center gap-2">
+            
+            <a class="btn btn-success shadow-sm" href="/admin/novedades/agregar">
+                <i class="fa fa-plus me-1" aria-hidden="true"></i> Nuevo
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-sm border-0 rounded-3 overflow-hidden">
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped align-middle mb-0">
+                        <thead class="table-dark">
+                            <tr>
+                                <th scope="col" class="py-3">Título</th>
+                                <th scope="col" class="py-3">Género</th>
+                                <th scope="col" class="py-3">Teatro</th>
+                                <th scope="col" class="text-end pe-4 py-3" style="width: 20%;">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each novedades}}
+                            <tr>
+                                <td class="fw-medium">{{titulo}}</td>
+                                <td class="fw-medium">{{genero}}</td>
+                                <td class="fw-medium">{{teatro}}</td>
+                                <td class="text-end pe-4">
+                                    <div class="btn-group" role="group" aria-label="Acciones">
+                                        <a class="btn btn-sm btn-outline-primary" href="/admin/novedades/modificar/{{idNovedades}}" title="Editar">
+                                            <i class="fa fa-pencil" aria-hidden="true"></i> Editar
+                                        </a>
+                                      <a class="btn btn-sm btn-outline-danger" href="/admin/novedades/eliminar/{{idNovedades}}" title="Borrar">
+                                            <i class="fa fa-trash" aria-hidden="true"></i> Borrar
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

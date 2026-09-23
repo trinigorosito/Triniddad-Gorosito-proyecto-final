@@ -1,0 +1,20 @@
+<h1>{{title}}</h1>
+
+
+
+{{#if conocido}}
+  <p style="color: red;">Hola{{nombre}}<a href="/salir">Salir</a></p>
+{{/if}}
+
+{{#unless conocido}}
+<p>No te conozco</p>
+<form action="/admin/login" method="POST">
+  <div>
+    <input type="text" name="usuario" placeholder="Usuario" required>
+  </div>
+  <div>
+    <input type="password" name="password" placeholder="Contraseña" required>
+  </div>
+  <button type="submit">Entrar</button>
+</form>
+{{/unless}}
